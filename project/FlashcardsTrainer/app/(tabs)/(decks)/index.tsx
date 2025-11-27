@@ -25,7 +25,7 @@ export default function DecksScreen() {
           <DeckCard
             title={item.title}
             count={item.cards.length}
-            onPress={() => router.push(`/(tabs)/(decks)/deck/${item.id}`)}
+            onPress={() => router.push(`/(decks)/deck/${item.id}`)}
           />
         )}
         ListEmptyComponent={
