@@ -1,11 +1,9 @@
 import { useContext, useState } from "react";
 import { View, FlatList, TouchableOpacity, Text } from "react-native";
 import { useRouter } from "expo-router";
-// import { FlashContext } from "../../../src/contexts/FlashContext";
-// import DeckCard from "../../../src/components/DeckCard";
-// import SearchBar from "../../../src/components/SearchBar";
-
 import { FlashContext } from "../../../src/contexts/FlashContext";
+import DeckCard from "../../../src/components/DeckCard";
+import SearchBar from "../../../src/components/SearchBar";
 
 export default function DecksScreen() {
   const { decks } = useContext(FlashContext);
