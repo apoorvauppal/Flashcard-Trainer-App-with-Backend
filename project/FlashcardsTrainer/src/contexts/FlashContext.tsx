@@ -4,7 +4,7 @@ type Card = {
   id: string;
   question: string;
   answer: string;
-  favorite?: boolean;
+  favorite: boolean;
 };
 
 type Deck = {
