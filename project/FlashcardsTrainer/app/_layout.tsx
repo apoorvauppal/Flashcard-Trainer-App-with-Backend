@@ -1,6 +1,5 @@
 import { Stack } from "expo-router";
 import { FlashProvider } from "../src/contexts/FlashContext";
-import { FlashProvider } from "../src/contexts/FlashContext";
 
 export default function RootLayout() {
   return (
