@@ -13,7 +13,7 @@ export default function RootLayout() {
 
         {/* Modals */}
         <Stack.Screen
-          name="(modals)/create-deck"
+          name=å"(modals)/create-deck"
           options={{
             presentation: "modal",
             title: "Create Deck",
