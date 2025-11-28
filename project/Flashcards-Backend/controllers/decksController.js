@@ -9,4 +9,5 @@ exports.getAllDecks = async (req, res) => {
         console.error(err);
         res.status(500).json({error: "Server error"})
     }
-}
+};
+exports.createDeck = async (req, res)
