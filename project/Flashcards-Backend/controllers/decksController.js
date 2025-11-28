@@ -27,6 +27,7 @@ exports.getDeckById = async (req, res) => {
     try{
         const { deckId } = req.params;
         const deck = await Deck.findById(deckId);
-        if(!deck) return res.status(404).json({ error: "Deck not found"})
+        if(!deck) return res.status(404).json({ error: "Deck not found" });
+        res.json(deck);
     }
 }
