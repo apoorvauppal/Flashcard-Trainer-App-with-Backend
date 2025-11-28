@@ -26,6 +26,6 @@ exports.createDeck = async (req, res) => {
 exports.getDeckById = async (req, res) => {
     try{
         const { deckId } = req.params;
-        const deck = await Deck.find
+        const deck = await Deck.findById(deckId)
     }
 }
