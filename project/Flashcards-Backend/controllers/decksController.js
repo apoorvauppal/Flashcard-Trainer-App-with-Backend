@@ -23,4 +23,4 @@ exports.createDeck = async (req, res) => {
     }
 };
 
-exports.getDeckById()
+exports.getDeckById = async (req, res)
