@@ -12,6 +12,7 @@ exports.getAllDecks = async (req, res) => {
 };
 exports.createDeck = async (req, res) => {
     try{
-        const { title } = re
+        const { title } = req.body;
+        if(!title) return res.status(400).json({error: ""})
     }
 }
