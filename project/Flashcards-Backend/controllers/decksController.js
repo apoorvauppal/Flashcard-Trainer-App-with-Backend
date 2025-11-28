@@ -34,3 +34,9 @@ exports.getDeckById = async (req, res) => {
         res.status(500).json({ error: "Server error" });
     }
 };
+
+exports.deleteDeck = async (req, res) => {
+    try{
+        
+    }
+}
