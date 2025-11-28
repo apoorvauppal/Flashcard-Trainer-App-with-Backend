@@ -17,5 +17,8 @@ exports.createDeck = async (req, res) => {
         const deck = new Deck({ title });
         await deck.save();
         res.status(201).json(deck);
-    } catch(err)
+    } catch(err){
+        console.error(err);
+        res.status(500)
+    }
 }
