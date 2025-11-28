@@ -37,6 +37,6 @@ exports.getDeckById = async (req, res) => {
 
 exports.deleteDeck = async (req, res) => {
     try{
-        const { }
+        const { deckId } = req
     }
 }
