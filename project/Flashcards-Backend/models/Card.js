@@ -5,5 +5,5 @@ const CardSchema = new mongoose.Schema({
     question: { type: String, required: true},
     answer: { type: String, required: true},
     isFavorite: { type: Boolean, default: false},
-    createdAt: {}
+    createdAt: { type: Date, default: Date.now}
 })
