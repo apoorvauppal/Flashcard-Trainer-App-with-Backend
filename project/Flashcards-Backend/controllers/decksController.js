@@ -16,6 +16,6 @@ exports.createDeck = async (req, res) => {
         if(!title) return res.status(400).json({error: "title is required"});
         const deck = new Deck({ title });
         await deck.save();
-        res.status(201)
-    }
+        res.status(201).json(deck);
+    } catch(err)
 }
