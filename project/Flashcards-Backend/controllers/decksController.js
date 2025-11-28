@@ -6,6 +6,7 @@ exports.getAllDecks = async (req, res) => {
         const decks = (await Deck.find()).toSorted({ createdAt: -1});
         res.json(dekcs);
     } catch(err){
-        
+        console.error(err);
+        res.status(500).json({error: "Server error"})
     }
 }
