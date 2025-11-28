@@ -5,5 +5,7 @@ exports.getAllDecks = async (req, res) => {
     try{
         const decks = (await Deck.find()).toSorted({ createdAt: -1});
         res.json(dekcs);
+    } catch(err){
+        
     }
 }
