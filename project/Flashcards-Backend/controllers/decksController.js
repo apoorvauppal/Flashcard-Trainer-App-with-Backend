@@ -19,6 +19,8 @@ exports.createDeck = async (req, res) => {
         res.status(201).json(deck);
     } catch(err){
         console.error(err);
-        res.status(500)
+        res.status(500).json({ error: "Server error" });
     }
-}
+};
+
+exports.getDeckById()
