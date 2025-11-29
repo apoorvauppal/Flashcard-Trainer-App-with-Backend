@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import { FlashContext } from '../../src/contexts/FlashContext';
 import { useRouter } from 'expo-router';
 import { useLocalSearchParams } from 'expo-router/build/hooks';
-import { View, StyleSheet, Text, TextInput, Button } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Button, Alert } from 'react-native';
 import { BASE_URL } from '../../src/config';
 
 export default function CreateCardModal(){
@@ -19,27 +19,27 @@ export default function CreateCardModal(){
     // };
 
       const handleCreate = async () => {
-    if (!question.trim() || !answer.trim() || !deckId) return;
+        if (!question.trim() || !answer.trim() || !deckId) return;
 
-    try {
-      const res = await fetch(`${BASE_URL}/api/decks/${deckId}/cards`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: question.trim(), answer: answer.trim() }),
-      });
+        try {
+          const res = await fetch(`${BASE_URL}/api/decks/${deckId}/cards`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ question: question.trim(), answer: answer.trim() }),
+          });
 
-      if (!res.ok) {
-        const data = await res.json();
-        Alert.alert('Error', data.error || 'Failed to create card');
-        return;
-      }
+          if (!res.ok) {
+            const data = await res.json();
+            Alert.alert('Error', data.error || 'Failed to create card');
+            return;
+          }
 
-      router.back(); // close modal after success
-    } catch (err) {
-      console.error(err);
-      Alert.alert('Error', 'Failed to connect to backend');
-    }
-  };
+          router.back(); // close modal after success
+        } catch (err) {
+          console.error(err);
+          Alert.alert('Error', 'Failed to connect to backend');
+        }
+      };
 
 
     return (
