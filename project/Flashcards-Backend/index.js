@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/flashcards";
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(mongodb+srv://auppal_db_user:<yeUdDGhh6kUIi9on>@cluster0.nsmde7a.mongodb.net/flashcardsDB?appName=Cluster0)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("Mongo connection error:", err));
 
