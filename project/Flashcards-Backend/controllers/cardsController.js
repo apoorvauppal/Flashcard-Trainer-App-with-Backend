@@ -75,3 +75,6 @@ exports.toggleFavorite = async(req,res) => {
     }
 };
 
+exports.getFavoriteCards = asyn(req, res) => {
+    
+}
