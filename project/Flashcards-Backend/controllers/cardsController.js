@@ -75,7 +75,7 @@ exports.toggleFavorite = async(req,res) => {
     }
 };
 
-exports.getFavoriteCards = asyn(req, res) => {
+exports.getFavoriteCards = async(req, res) => {
     try{
         const cards = await Card.find({ isFavorite: true}).sort({createdAt: -1});
         res.json(cards);
