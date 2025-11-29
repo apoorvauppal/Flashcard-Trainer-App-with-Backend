@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react' 
 import { FlashContext } from '../../src/contexts/FlashContext';
 import {useRouter} from 'expo-router'
-import { View, StyleSheet, Text, TextInput, Button } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Button, Alert } from 'react-native';
 import { BASE_URL } from '../../src/config';
 
 export default function CreateDeckModal(){
