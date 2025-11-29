@@ -14,4 +14,10 @@ exports.getCardsForDeck = async(req, res) => {
     }
 };
 
-exports.createCardInDeck = async (req, res) =>
+exports.createCardInDeck = async (req, res) => {
+    try{
+        const { deckId } = req.params;
+        const { question, answer, isFavorite } = req.body;
+        if(!question ||)
+    }
+}
