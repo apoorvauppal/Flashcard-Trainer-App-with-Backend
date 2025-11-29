@@ -49,5 +49,7 @@ exports.updateCard = async(req, res) => {
 };
 
 exports.deleteCard = async(req,res) => {
-    
+    try{
+        
+    }
 }
