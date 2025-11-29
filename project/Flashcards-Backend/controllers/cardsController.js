@@ -1,4 +1,4 @@
-const Deck = require("../models/Decks");
+const Deck = require("../models/Deck");
 const Card = require("../models/Card");
 
 exports.getCardsForDeck = async(req, res) => {
