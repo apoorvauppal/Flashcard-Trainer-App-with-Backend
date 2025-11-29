@@ -3,4 +3,5 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-const decksRoutes = require("./routes/decksRoutes")
+const decksRoutes = require("./routes/decksRoutes");
+const cardsRoutes = require("./routes/cardsRoutes");
