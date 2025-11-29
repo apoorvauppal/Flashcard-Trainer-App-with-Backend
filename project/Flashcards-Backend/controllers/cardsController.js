@@ -14,4 +14,4 @@ exports.getCardsForDeck = async(req, res) => {
     }
 };
 
-exports.createCardInDeck = async
+exports.createCardInDeck = async (req, res) =>
