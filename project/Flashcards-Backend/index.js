@@ -26,4 +26,6 @@ app.use("/api/cards", cardsRoutes);
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, ())
+app.listen(PORT, () => {
+    console.log("Sever listening on port ")
+})
