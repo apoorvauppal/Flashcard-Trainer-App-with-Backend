@@ -24,6 +24,8 @@ exports.createCardInDeck = async (req, res) => {
         if(!deck) return res.status(404).json({ error: "Deck not found"});
         const card = new Card({ deckId, question, answer, isFavorite: !!isFavorite});
         await card.save()
-        res.s
+        res.status(201).json(card)
+    } catch(err){
+        console.error(err)
     }
 }
