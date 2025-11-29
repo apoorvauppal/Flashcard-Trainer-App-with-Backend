@@ -39,6 +39,6 @@ exports.updateCard = async(req, res) => {
         if (question !== undefined) updates.question = question;
         if (answer !== undefined) updates.answer = answer;
 
-        const card = await 
+        const card = await Card.findByIdAndUpdate(cardId, updates, {new: true})
     }
 }
