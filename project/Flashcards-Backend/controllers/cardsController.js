@@ -71,6 +71,7 @@ exports.toggleFavorite = async(req,res) => {
         res.json(card);
     } catch(err){
         console.error(err);
-        res.status(500).json({})
+        res.status(500).json({ error: "Sever error"});
     }
-}
+};
+
