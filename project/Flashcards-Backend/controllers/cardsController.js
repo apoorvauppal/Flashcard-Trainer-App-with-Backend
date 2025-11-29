@@ -64,6 +64,6 @@ exports.deleteCard = async(req,res) => {
 exports.toggleFavorite = async(req,res) => {
     try{
         const { cardId } = req.params;
-        
+        const card = await Card.findById
     }
 }
