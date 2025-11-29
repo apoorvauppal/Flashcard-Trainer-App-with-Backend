@@ -51,6 +51,8 @@ exports.updateCard = async(req, res) => {
 exports.deleteCard = async(req,res) => {
     try{
         const { cardId } = req.params;
-        const card = await Card.findById
+        const card = await Card.findById(cardId);
+        if (!card) return res.status(404).json({ error: "Card not found"});
+        
     }
 }
