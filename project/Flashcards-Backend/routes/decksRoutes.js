@@ -10,3 +10,5 @@ router.delete("/:deckId", decksController.deleteDeck);
 
 router.get("/:deckId/cards", cardsController.getCardsForDeck);
 router.post("/deckId/cards", cardsController.createCardInDeck);
+
+module.exports = router;
