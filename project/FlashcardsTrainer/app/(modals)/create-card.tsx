@@ -12,11 +12,36 @@ export default function CreateCardModal(){
     const router = useRouter();
     const {deckId} = useLocalSearchParams<{deckId: string}>();
 
-    const handleCreate = () => {
-        if(!question.trim() || !answer.trim() || !deckId) return;
-        addCardToDeck(deckId, {question: question.trim(), answer: answer.trim()});
-        router.back();
-    };
+    // const handleCreate = () => {
+    //     if(!question.trim() || !answer.trim() || !deckId) return;
+    //     addCardToDeck(deckId, {question: question.trim(), answer: answer.trim()});
+    //     router.back();
+    // };
+
+      const handleCreate = async () => {
+    if (!question.trim() || !answer.trim() || !deckId) return;
+
+    try {
+      const res = await fetch(`${BASE_URL}/api/decks/${deckId}/cards`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: question.trim(), answer: answer.trim() }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        Alert.alert('Error', data.error || 'Failed to create card');
+        return;
+      }
+
+      router.back(); // close modal after success
+    } catch (err) {
+      console.error(err);
+      Alert.alert('Error', 'Failed to connect to backend');
+    }
+  };
+
+
     return (
     <View style={styles.container}>
       <Text style={styles.label}>New Card</Text>
