@@ -50,6 +50,7 @@ exports.updateCard = async(req, res) => {
 
 exports.deleteCard = async(req,res) => {
     try{
-        
+        const { cardId } = req.params;
+        const card = await Card.findById
     }
 }
