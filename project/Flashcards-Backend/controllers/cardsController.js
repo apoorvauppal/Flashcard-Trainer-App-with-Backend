@@ -18,6 +18,6 @@ exports.createCardInDeck = async (req, res) => {
     try{
         const { deckId } = req.params;
         const { question, answer, isFavorite } = req.body;
-        if(!question || !answer) return res.status(400.json)
+        if(!question || !answer) return res.status(400.json({ error: "question and answer are required"}))
     }
 }
