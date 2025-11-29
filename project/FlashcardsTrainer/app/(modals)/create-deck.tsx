@@ -8,11 +8,34 @@ export default function CreateDeckModal(){
     const {createDeck} = useContext(FlashContext)
     const router = useRouter();
 
-    const handleCreate = () => {
-        if(!title.trim()) return;
-        createDeck(title.trim());
-        router.back();
-    };
+    // const handleCreate = () => {
+    //     if(!title.trim()) return;
+    //     createDeck(title.trim());
+    //     router.back();
+    // };
+
+    const handleCreate = async () => {
+    if (!title.trim()) return;
+
+    try {
+      const res = await fetch(`${BASE_URL}/api/decks`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: title.trim() }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        Alert.alert('Error', data.error || 'Failed to create deck');
+        return;
+      }
+
+      router.back(); // close modal after success
+    } catch (err) {
+      console.error(err);
+      Alert.alert('Error', 'Failed to connect to backend');
+    }
+  };
 
     return(
         <View style={styles.container}>
