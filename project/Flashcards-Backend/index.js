@@ -19,3 +19,6 @@ mongoose.connect(MONGO_URI, {
 }).catch(err => {
     console.error("Mongo connection error:", err);
 });
+
+app.use("/api/decks", decksRoutes);
+app.use("/api")
