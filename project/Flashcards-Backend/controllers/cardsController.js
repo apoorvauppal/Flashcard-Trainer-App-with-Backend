@@ -55,5 +55,8 @@ exports.deleteCard = async(req,res) => {
         if (!card) return res.status(404).json({ error: "Card not found"});
         await Card.deleteOne({_id: cardId});
         res.json({message: "Card deleted"});
-    } catch
+    } catch(err){
+        console.error(err);
+        res.status(500).json({ error: "Server error"});
+    }
 }
