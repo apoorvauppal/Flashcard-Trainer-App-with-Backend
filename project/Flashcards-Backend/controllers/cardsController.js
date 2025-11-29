@@ -66,6 +66,8 @@ exports.toggleFavorite = async(req,res) => {
         const { cardId } = req.params;
         const card = await Card.findById(cardId);
         if (!card) return res.status(404).json({ error: "Card not found"});
-        card.isFavorite 
+        card.isFavorite = !card.isFavorite;
+        await card.save();
+        res.json(card);
     }
 }
