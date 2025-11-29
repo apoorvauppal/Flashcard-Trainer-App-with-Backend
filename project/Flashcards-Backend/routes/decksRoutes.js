@@ -6,4 +6,6 @@ const cardsController = require("../controllers/cardsController");
 router.get("/", decksController.getAllDecks);
 router.post("/", decksController.createDeck);
 router.get("/:deckId", decksController.getDeckById);
-router.delete("/;")
+router.delete("/:deckId", decksController.deleteDeck);
+
+router.get("/:deckId/cards");
