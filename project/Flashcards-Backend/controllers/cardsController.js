@@ -79,5 +79,8 @@ exports.getFavoriteCards = asyn(req, res) => {
     try{
         const cards = await Card.find({ isFavorite: true}).sort({createdAt: -1});
         res.json(cards);
+    } catch(err){
+        console.error(err);
+        res.status(500).json({ error: "Server error"})
     }
 }
