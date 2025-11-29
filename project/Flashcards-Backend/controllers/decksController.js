@@ -4,7 +4,7 @@ const Card = require("../models/Card")
 exports.getAllDecks = async (req, res) => {
     try{
         const decks = (await Deck.find()).sort({ createdAt: -1});
-        res.json(dekcs);
+        res.json(decs);
     } catch(err){
         console.error(err);
         res.status(500).json({error: "Server error"})
