@@ -5,6 +5,6 @@ exports.getCardsForDeck = async(req, res) => {
     try{
         const { deckId } = req.params;
         const deck = await Deck.findById(deckId);
-        if(!deck)
+        if(!deck) return res.status(404).json({ error: "Deck not found" })
     }
 }
