@@ -18,6 +18,6 @@ exports.createCardInDeck = async (req, res) => {
     try{
         const { deckId } = req.params;
         const { question, answer, isFavorite } = req.body;
-        if(!question ||)
+        if(!question || !answer) return res.status(400.json)
     }
 }
