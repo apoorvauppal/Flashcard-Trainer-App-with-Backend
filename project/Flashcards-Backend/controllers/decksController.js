@@ -43,6 +43,8 @@ exports.deleteDeck = async (req, res) => {
 
         await Deck.deleteOne({ _id: });
 
-        await Card.deleteMany({ deckId: deckId })
+        await Card.deleteMany({ deckId: deckId });
+
+        res.json({ message: "Deck and its cards deleted"})
     }
 }
