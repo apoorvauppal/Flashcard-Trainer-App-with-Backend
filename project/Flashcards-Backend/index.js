@@ -23,4 +23,7 @@ mongoose.connect(MONGO_URI, {
 app.use("/api/decks", decksRoutes);
 app.use("/api/cards", cardsRoutes);
 
-app.get("/api/health", (req, res) => res.json({ ok: true }))
+app.get("/api/health", (req, res) => res.json({ ok: true }));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, ())
