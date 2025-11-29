@@ -22,6 +22,6 @@ exports.createCardInDeck = async (req, res) => {
         
         const deck = await Deck.findById(deckId);
         if(!deck) return res.status(404).json({ error: "Deck not found"});
-        const card = new Card
+        const card = new Card({ deckId, question, answer, isFavorite})
     }
 }
