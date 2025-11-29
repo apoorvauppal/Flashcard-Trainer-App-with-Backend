@@ -26,6 +26,7 @@ exports.createCardInDeck = async (req, res) => {
         await card.save()
         res.status(201).json(card)
     } catch(err){
-        console.error(err)
+        console.error(err);
+        res.status(500).json({ error: "Server error"})
     }
 }
