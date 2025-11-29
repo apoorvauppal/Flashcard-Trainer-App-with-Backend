@@ -40,6 +40,7 @@ exports.updateCard = async(req, res) => {
         if (answer !== undefined) updates.answer = answer;
 
         const card = await Card.findByIdAndUpdate(cardId, updates, {new: true});
-        if(!card) return res.status(404)
+        if(!card) return res.status(404).json({ error: "Card now found"});
+        res..json(card)
     }
 }
