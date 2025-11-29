@@ -41,6 +41,9 @@ exports.updateCard = async(req, res) => {
 
         const card = await Card.findByIdAndUpdate(cardId, updates, {new: true});
         if(!card) return res.status(404).json({ error: "Card now found"});
-        res..json(card)
+        res.json(card);
+    } catch(err){
+        console.error(err);
+        res.status(500)
     }
 }
