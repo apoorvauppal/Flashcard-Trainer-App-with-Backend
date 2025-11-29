@@ -9,6 +9,7 @@ exports.getCardsForDeck = async(req, res) => {
         const cards = (await Card.find({ deckId })).toSorted({ createdAt: -1});
         res.json(cards);
     } catch (err){
-        console.error(err)
+        console.error(err);
+        res.status(500).json({error: "Server error"});
     }
-}
+};
