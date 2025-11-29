@@ -4,3 +4,4 @@ const cardsController = require("../controllers/cardsController");
 
 router.put("/:cardId", cardsController.updateCard);
 router.delete("/:cardId", cardsController.deleteCard);
+router.patch("/:cardId")
