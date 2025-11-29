@@ -33,6 +33,6 @@ exports.createCardInDeck = async (req, res) => {
 
 exports.updateCard = async(req, res) => {
     try{
-        const {}
+        const { cardId } 
     }
 }
