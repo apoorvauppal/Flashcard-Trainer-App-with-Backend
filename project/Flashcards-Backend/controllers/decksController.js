@@ -3,7 +3,7 @@ const Card = require("../models/Card")
 
 exports.getAllDecks = async (req, res) => {
     try{
-        const decks = await Deck.find()).sort({ createdAt: -1};
+        const decks = await Deck.find().sort({ createdAt: -1});
         res.json(decks);
     } catch(err){
         console.error(err);
