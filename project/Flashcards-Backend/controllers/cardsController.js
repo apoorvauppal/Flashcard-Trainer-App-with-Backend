@@ -3,6 +3,8 @@ const Card = require("../models/Card");
 
 exports.getCardsForDeck = async(req, res) => {
     try{
-        const { deckId }
+        const { deckId } = req.params;
+        const deck = await Deck.findById(deckId);
+        if(!deck)
     }
 }
