@@ -5,4 +5,5 @@ const cardsController = require("../controllers/cardsController");
 
 router.ger("/", decksController.getAllDecks);
 router.post("/", decksController.createDeck);
-router.ger("")
+router.get("/:deckId", decksController.getDeckById);
+router.del
