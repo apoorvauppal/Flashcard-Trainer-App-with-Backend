@@ -3,7 +3,7 @@ import { FlashContext } from '../../src/contexts/FlashContext';
 import { useRouter } from 'expo-router';
 import { useLocalSearchParams } from 'expo-router/build/hooks';
 import { View, StyleSheet, Text, TextInput, Button } from 'react-native';
-
+import { BASE_URL } from '../../src/config';
 
 export default function CreateCardModal(){
     const [question, setQuestion] = useState("");
