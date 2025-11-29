@@ -1,7 +1,7 @@
 import { Platform } from "react-native";
 
 const LOCALHOST =
-  Platform.OS === "ios"
+  Platform.OS === "android"
     ? "http://10.0.2.2:3000"
     : "http://192.168.1.159:3000";
 
