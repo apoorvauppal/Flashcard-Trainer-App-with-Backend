@@ -6,6 +6,7 @@ exports.getCardsForDeck = async(req, res) => {
         const { deckId } = req.params;
         const deck = await Deck.findById(deckId);
         if(!deck) return res.status(404).json({ error: "Deck not found" });
-        const cards = await Card.find({ deckId }).sort
+        const cards = (await Card.find({ deckId })).toSorted({ createdAt: -1});
+        res.json(cards);
     }
 }
