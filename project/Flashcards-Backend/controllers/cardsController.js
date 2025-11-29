@@ -8,5 +8,7 @@ exports.getCardsForDeck = async(req, res) => {
         if(!deck) return res.status(404).json({ error: "Deck not found" });
         const cards = (await Card.find({ deckId })).toSorted({ createdAt: -1});
         res.json(cards);
+    } catch (err){
+        console.error(err)
     }
 }
