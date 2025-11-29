@@ -21,4 +21,6 @@ mongoose.connect(MONGO_URI, {
 });
 
 app.use("/api/decks", decksRoutes);
-app.use("/api")
+app.use("/api/cards", cardsRoutes);
+
+app.get("/api/health")
