@@ -41,7 +41,7 @@ exports.deleteDeck = async (req, res) => {
         const deck = await Deck.findById(deckId);
         if(!deck) return res.status(404).json({ error: "Deck not found"});
 
-        await Deck.deleteOne({ _id: });
+        await Deck.deleteOne({ _id: deckId });
 
         await Card.deleteMany({ deckId: deckId });
 
