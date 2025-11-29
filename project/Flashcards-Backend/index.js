@@ -23,4 +23,4 @@ mongoose.connect(MONGO_URI, {
 app.use("/api/decks", decksRoutes);
 app.use("/api/cards", cardsRoutes);
 
-app.get("/api/health")
+app.get("/api/health", (req, res) => res.json({ ok: true }))
