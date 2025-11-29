@@ -9,4 +9,4 @@ router.get("/:deckId", decksController.getDeckById);
 router.delete("/:deckId", decksController.deleteDeck);
 
 router.get("/:deckId/cards", cardsController.getCardsForDeck);
-router
+router.post("/deckId/cards", cardsController.createCardInDeck);
