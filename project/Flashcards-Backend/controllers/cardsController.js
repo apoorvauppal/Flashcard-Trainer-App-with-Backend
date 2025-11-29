@@ -21,6 +21,7 @@ exports.createCardInDeck = async (req, res) => {
         if(!question || !answer) return res.status(400).json({ error: "question and answer are required"});
         
         const deck = await Deck.findById(deckId);
-        if(!deck) return res.status(404).json({})
+        if(!deck) return res.status(404).json({ error: "Deck not found"});
+        const card = new Card
     }
 }
