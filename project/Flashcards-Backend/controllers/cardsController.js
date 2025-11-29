@@ -69,5 +69,8 @@ exports.toggleFavorite = async(req,res) => {
         card.isFavorite = !card.isFavorite;
         await card.save();
         res.json(card);
+    } catch(err){
+        console.error(err);
+        res.status(500).json({})
     }
 }
